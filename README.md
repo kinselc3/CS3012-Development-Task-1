@@ -3,7 +3,7 @@
     [src https://github.com/nassersala/cbdd]
 
 # compile using
-    $clang clang testCases.c -fblocks -lBlocksRuntime -lcbdd
+    $clang testCases.c -fblocks -lBlocksRuntime -lcbdd
 
 # run using
     $./a.out

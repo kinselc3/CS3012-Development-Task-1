@@ -8,7 +8,7 @@ int x;
 
 int LCA(struct Graph* graph, int A, int B){
 	//todo
-	if(A < -1  || B < -1 || A < graph->V|| B < graph->V)
+	if(A < -1  || B < -1 || A > graph->V|| B > graph->V)
 		return -1;
 	int y = B;
 	int x = A;
@@ -19,10 +19,12 @@ int LCA(struct Graph* graph, int A, int B){
 	
     for (v = 0; v < graph->V; ++v) 
     { 
+		
         pCrawlA = graph->array[A].head; 
 		pCrawlB = graph->array[B].head; 
-        printf("\n Adjacency list of vertex %d\n head ", v); 
-        while (pCrawlA || pCrawlB) 
+        //printf("\n Adjacency list of vertex %d\n head ", v); 
+		
+        while (pCrawlA) 
         { 
 			if(pCrawlA->dest < x)
 				x = pCrawlA->dest;

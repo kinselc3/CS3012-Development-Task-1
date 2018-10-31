@@ -26,9 +26,16 @@ int main()
   it("testing size of graph", ^{
         expect_equal(8,graph->V) ;
   });
-
-  int n1 = 0, n2 = 1;
+  int n1 = 5, n2 = 3;
   int t = LCA(graph, n1, n2);
+
+  it("testing nodes with same parent", ^{
+        expect_equal(6,t) ;
+  });
+  
+  n1 = 0, n2 = 1;
+  t = LCA(graph, n1, n2);
+  
   it("testing parent and child", ^{
         expect_equal(1, t) ;
   });
